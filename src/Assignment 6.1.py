@@ -1,7 +1,6 @@
 import sys
 import csv
-import distutils
-
+import datetime
 
 def convert_to_utf8(input, output):
     f = open(input, encoding='iso-8859-1')
