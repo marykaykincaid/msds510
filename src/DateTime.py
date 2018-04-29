@@ -1,6 +1,7 @@
 import time
 import datetime
 
+
 def month_string_to_number(string):
     m = {
         'Jan': 1,
@@ -24,6 +25,8 @@ def month_string_to_number(string):
     except:
         raise ValueError('Not a month')
 
+
+#main
 def main():
     records = [
         dict(year='1998', intro='Jun-88'),
