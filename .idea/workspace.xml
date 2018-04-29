@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c9dc67f-d0ed-4031-b54d-142bf1130303" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/msds510/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/msds510/util.py" />
-      <change beforePath="$PROJECT_DIR$/src/DateTime.py" afterPath="$PROJECT_DIR$/src/DateTime.py" />
-    </list>
+    <list default="true" id="0c9dc67f-d0ed-4031-b54d-142bf1130303" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
