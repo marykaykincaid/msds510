@@ -1,11 +1,10 @@
-import sys
 import csv
-import datetime
+
 
 def convert_to_utf8(input, output):
     f = open(input, encoding='iso-8859-1')
     data = f.read()
-    #print(data)
+    # print(data)
 
     with open(output, 'w') as f:
         f.write(data)
@@ -15,11 +14,11 @@ def read_csv(input):
     rows = []
     # Open file - avengers.csv
 
-    with open('../data/interim/avengers_utf8.csv') as input:
-    # Create csv reader object
-        reader = csv.reader(input)
+    with open(input) as input_file:
+        # Create csv reader object
+        reader = csv.reader(input_file)
 
-    # extracting each data row one by one
+        # extracting each data row one by one
         for row in reader:
             rows.append(row)
         print(rows[161])
@@ -30,17 +29,17 @@ def read_csv_dict(input):
         input_file = csv.DictReader(csvfile)
         for row in input_file:
             print(row)
-    #print(row(161))
+    # print(row(161))
 
 
-def write_csv(input,output):
+def write_csv(input, output):
     with open(input) as fin:
         dr = csv.DictReader(fin, delimiter=',')
         dr.fieldnames = [name.lower() for name in dr.fieldnames]
         dr.fieldnames = [name.strip('\n').strip('?') for name in dr.fieldnames]
-        dr.fieldnames = [name.replace('/','_') for name in dr.fieldnames]
-# dr.fieldnames contains values from first row of `f`.
-        with open(output,'w') as fou:
+        dr.fieldnames = [name.replace('/', '_') for name in dr.fieldnames]
+        # dr.fieldnames contains values from first row of `f`.
+        with open(output, 'w') as fou:
             dw = csv.DictWriter(fou, delimiter=',', fieldnames=dr.fieldnames)
             headers = {}
             for n in dw.fieldnames:
@@ -51,10 +50,12 @@ def write_csv(input,output):
 
 
 def main():
-    convert_to_utf8('../data/raw/avengers.csv','../data/interim/avengers_utf8.csv')
-    read_csv('../data/interim/avengers_utf8.csv')
-    read_csv_dict('../data/interim/avengers_utf8.csv')
-    write_csv('../data/interim/avengers_utf8.csv','../data/processed/avengers_utf8.csv')
+    convert_to_utf8('../data/raw/avengers.csv',
+                    '../data/interim/avengers_processed.csv')
+    read_csv('../data/interim/avengers_processed.csv')
+    read_csv_dict('../data/interim/avengers_processed.csv')
+    write_csv('../data/interim/avengers_processed.csv',
+              '../data/processed/avengers_processed.csv')
 
 
 if __name__ == "__main__":
