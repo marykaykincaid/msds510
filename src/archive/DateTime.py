@@ -1,4 +1,5 @@
 def month_string_to_number(string):
+    """Convert month names to numbers."""
     m = {
         'Jan': 1,
         'Feb': 2,
@@ -24,6 +25,7 @@ def month_string_to_number(string):
 
 # main
 def main():
+    """Main function to convert records into new date format."""
     records = [
         dict(year='1998', intro='Jun-88'),
         dict(year='1989', intro='May-89'),

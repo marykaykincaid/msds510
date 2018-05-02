@@ -2,6 +2,7 @@ import csv
 
 
 def convert_to_utf8(input, output):
+    """Convert input of binary file to ouput file in UTF8."""
     f = open(input, encoding='iso-8859-1')
     data = f.read()
     # print(data)
@@ -11,6 +12,7 @@ def convert_to_utf8(input, output):
 
 
 def read_csv(input):
+    """Read input file and count number of rows."""
     rows = []
     # Open file - avengers.csv
 
@@ -25,6 +27,7 @@ def read_csv(input):
 
 
 def read_csv_dict(input):
+    """Read input file and convert to dictionary with DictReader."""
     with open(input) as csvfile:
         input_file = csv.DictReader(csvfile)
         for row in input_file:
@@ -33,6 +36,7 @@ def read_csv_dict(input):
 
 
 def write_csv(input, output):
+    """Read input file and modify data values - export to new file."""
     with open(input) as fin:
         dr = csv.DictReader(fin, delimiter=',')
         dr.fieldnames = [name.lower() for name in dr.fieldnames]
@@ -50,6 +54,7 @@ def write_csv(input, output):
 
 
 def main():
+    """Main funtion for assignment 6, converting Avengers data."""
     convert_to_utf8('../data/raw/avengers.csv',
                     '../data/interim/avengers_processed.csv')
     read_csv('../data/interim/avengers_processed.csv')

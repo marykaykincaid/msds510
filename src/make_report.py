@@ -12,6 +12,7 @@ from msds510.util import create_report
 
 # main function
 def main():
+    """Main function to create a report of Avengers Data."""
     read_csv_dict('../data/processed/avengers_processed.csv')
     create_report('../data/processed/avengers_sorted.csv')
 

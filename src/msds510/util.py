@@ -9,6 +9,7 @@ import operator as op
 
 
 def convert_to_utf8(input, output):
+    """Convert input of binary file to ouput file in UTF8."""
     f = open(input, encoding='iso-8859-1')
     data = f.read()
 
@@ -17,6 +18,8 @@ def convert_to_utf8(input, output):
 
 
 def write_csv(input, output):
+    """Opens a UTF8 file and does several manipulations on values then
+    outputs the header row and additional file rows to a new file."""
     current_year = 2018
     with open(input) as fin:
         dr = csv.DictReader(fin, delimiter=',')
@@ -52,6 +55,8 @@ def write_csv(input, output):
 
 
 def read_csv_dict(input):
+    """Reads input file, converts to dict and sorts out data by number of appearances
+    writes new list order to file."""
     list_of_dicts = []
     with open('../data/processed/avengers_processed.csv', 'r') as f:
         reader = csv.DictReader(f)
@@ -74,6 +79,7 @@ def read_csv_dict(input):
 
 
 def create_report(input):
+    """Outputs a report based on the sorted file data."""
     with open('../data/processed/avengers_sorted.csv', 'r') as f:
         reader = csv.DictReader(f)
         print("Avengers Markdown Report")
@@ -91,11 +97,13 @@ def create_report(input):
 
 # Change input to int
 def to_int(field_to_int):
+    """Convert argument to integer."""
     return int(field_to_int)
 
 
 # Change input to boolean
 def to_bool(field_to_bool):
+    """Convert argument to boolean."""
     if field_to_bool == 'YES':
         return bool(field_to_bool)
     if field_to_bool == 'NO':
