@@ -160,8 +160,7 @@ class Avenger:
         return 'Avenger(name_alias = %s, url = %s)'% (self.name_alias(), self.url())
         # return 'Avenger: %s' % (self.record)
         # return "%s(%r)" % (self.__class__, self.__dict__)
-        # return '<{0}.{1} object at {2}>'.format(self.__module__, type(self).__name__, hex(id(self)))
-
+    
 
 if __name__ == '__main__':
     pym_record = {
