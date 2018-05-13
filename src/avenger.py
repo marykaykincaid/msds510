@@ -1,6 +1,6 @@
 # Mary Kay Kincaid
 # 4/7/18
-# Assignment 9.1
+# Assignment 9.1 - Week 9
 # Object Oriented Programming Assignment
 
 from datetime import datetime
