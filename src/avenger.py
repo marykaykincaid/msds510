@@ -13,7 +13,7 @@ class Avenger:
         Args:
             record (dict): Dictionary-based record of Avenger data
         """
-        self.record=record
+        self.record = record
 
     def url(self):
         """
